@@ -55,12 +55,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: code
-          path: .
+          path: code
 
       - name: build docker
-        working-directory: 02-git-github/exercises/github-actions-katas
+        working-directory: code
         run: bash ci/build-docker.sh
 
       - name: push docker
-        working-directory: 02-git-github/exercises/github-actions-katas
+        working-directory: code
         run: bash ci/push-docker.sh
